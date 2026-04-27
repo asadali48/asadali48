@@ -8,8 +8,22 @@
 </head>
 <body class="bg-slate-950 text-white">
 
-<!-- HERO SECTION -->
-<section class="text-center py-20 px-6">
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full bg-slate-900 shadow-lg z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <div class="text-xl font-bold">AsadDBA</div>
+    <nav class="space-x-6 hidden md:block">
+      <a href="#home" class="hover:text-cyan-400">Home</a>
+      <a href="#about" class="hover:text-cyan-400">About</a>
+      <a href="#services" class="hover:text-cyan-400">Services</a>
+      <a href="#case" class="hover:text-cyan-400">Case Studies</a>
+      <a href="#contact" class="hover:text-cyan-400">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="text-center py-32 px-6">
   <h1 class="text-5xl font-bold mb-4">I Fix Slow MySQL Databases 🚀</h1>
   <p class="text-xl text-gray-400 mb-6">MySQL DBA | Query Optimization | Replication | High Availability</p>
   <p class="max-w-2xl mx-auto text-gray-400 mb-8">
@@ -18,24 +32,16 @@
   <a href="#contact" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Get Free Database Audit</a>
 </section>
 
-<!-- TRUST / METRICS -->
-<section class="grid md:grid-cols-3 gap-6 px-6 max-w-5xl mx-auto mb-16">
-  <div class="bg-slate-900 p-6 rounded-2xl text-center">
-    <h2 class="text-3xl font-bold">80%+</h2>
-    <p class="text-gray-400">Query Performance Improvement</p>
-  </div>
-  <div class="bg-slate-900 p-6 rounded-2xl text-center">
-    <h2 class="text-3xl font-bold">500GB+</h2>
-    <p class="text-gray-400">Handled Production Databases</p>
-  </div>
-  <div class="bg-slate-900 p-6 rounded-2xl text-center">
-    <h2 class="text-3xl font-bold">24h</h2>
-    <p class="text-gray-400">Critical Issue Resolution</p>
-  </div>
+<!-- ABOUT -->
+<section id="about" class="max-w-5xl mx-auto px-6 mb-20">
+  <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+  <p class="text-gray-400 text-center max-w-3xl mx-auto">
+    I am a MySQL Database Administrator with strong expertise in performance tuning, replication, and production troubleshooting. I specialize in solving real-world database bottlenecks and scaling systems for high performance.
+  </p>
 </section>
 
 <!-- SERVICES -->
-<section class="max-w-5xl mx-auto px-6 mb-16">
+<section id="services" class="max-w-5xl mx-auto px-6 mb-20">
   <h2 class="text-3xl font-bold mb-8 text-center">Services</h2>
   <div class="grid md:grid-cols-2 gap-6">
     <div class="bg-slate-900 p-6 rounded-2xl">
@@ -57,30 +63,22 @@
   </div>
 </section>
 
-<!-- CASE STUDY -->
-<section class="max-w-5xl mx-auto px-6 mb-16">
-  <h2 class="text-3xl font-bold mb-8 text-center">Case Study</h2>
+<!-- CASE STUDIES -->
+<section id="case" class="max-w-5xl mx-auto px-6 mb-20">
+  <h2 class="text-3xl font-bold mb-8 text-center">Case Studies</h2>
   <div class="bg-slate-900 p-8 rounded-2xl">
-    <p class="mb-2"><strong>Problem:</strong> Slow e-commerce queries (5-8 seconds)</p>
-    <p class="mb-2"><strong>Solution:</strong> Index optimization + query rewrite + EXPLAIN analysis</p>
-    <p class="mb-2"><strong>Result:</strong> Reduced execution time to 200ms 🚀</p>
+    <p><strong>Problem:</strong> Slow queries (5-8 seconds)</p>
+    <p><strong>Solution:</strong> Index tuning + query rewrite</p>
+    <p><strong>Result:</strong> Reduced to 200ms 🚀</p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="text-center mb-16 px-6">
-  <h2 class="text-3xl font-bold mb-4">Facing Slow Database Issues?</h2>
-  <p class="text-gray-400 mb-6">Let me analyze and fix your database performance.</p>
-  <a href="#contact" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Hire Me Now</a>
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="max-w-3xl mx-auto px-6 mb-16">
+<section id="contact" class="max-w-3xl mx-auto px-6 mb-20">
   <div class="bg-slate-900 p-8 rounded-2xl text-center">
     <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
     <p class="text-gray-400 mb-4">Email: your-email@example.com</p>
-    <p class="text-gray-400 mb-6">GitHub: github.com/yourprofile</p>
-    <a href="mailto:your-email@example.com" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Send Email</a>
+    <a href="mailto:your-email@example.com" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Hire Me</a>
   </div>
 </section>
 
