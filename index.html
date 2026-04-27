@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,9 +12,44 @@ function Navbar() {
           <Link to="/fix-slow-mysql-queries">Fix Queries</Link>
           <Link to="/mysql-replication-setup">Replication</Link>
           <Link to="/mysql-performance-tuning">Performance</Link>
+          <a href="#contact" className="bg-cyan-400 text-black px-4 py-2 rounded-lg">Free Audit</a>
         </nav>
       </div>
     </header>
+  );
+}
+
+function LeadForm() {
+  const [form, setForm] = useState({ name: "", email: "", issue: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Lead captured! (Integrate EmailJS/Formspree for real emails)");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-slate-900 p-6 rounded-2xl max-w-xl mx-auto">
+      <input
+        type="text"
+        placeholder="Your Name"
+        className="w-full p-3 mb-4 rounded bg-slate-800"
+        onChange={(e) => setForm({ ...form, name: e.target.value })}
+      />
+      <input
+        type="email"
+        placeholder="Your Email"
+        className="w-full p-3 mb-4 rounded bg-slate-800"
+        onChange={(e) => setForm({ ...form, email: e.target.value })}
+      />
+      <textarea
+        placeholder="Describe your database issue"
+        className="w-full p-3 mb-4 rounded bg-slate-800"
+        onChange={(e) => setForm({ ...form, issue: e.target.value })}
+      />
+      <button className="bg-cyan-400 text-black px-6 py-3 rounded-xl w-full">
+        Get Free Audit
+      </button>
+    </form>
   );
 }
 
@@ -25,9 +60,7 @@ function Home() {
         Fix Your Slow MySQL Queries in 24 Hours 🚀
       </motion.h1>
       <p className="text-gray-400 mb-6">Free audit + actionable fixes</p>
-      <a href="mailto:your-email@example.com" className="bg-cyan-400 text-black px-6 py-3 rounded-xl">
-        Get Free Audit
-      </a>
+      <LeadForm />
     </div>
   );
 }
@@ -36,14 +69,18 @@ function FixQueries() {
   return (
     <div className="pt-32 max-w-4xl mx-auto px-6">
       <h1 className="text-4xl font-bold mb-6">Fix Slow MySQL Queries</h1>
-      <p className="text-gray-400 mb-4">
-        Learn how I reduced query execution time from seconds to milliseconds using indexing, EXPLAIN plans, and query rewrites.
-      </p>
+      <p className="text-gray-400 mb-4">Queries taking 5+ seconds? I reduce them to milliseconds using indexing, EXPLAIN, and query rewrites.</p>
       <ul className="list-disc ml-6 text-gray-400">
-        <li>Analyze slow query log</li>
-        <li>Optimize indexes</li>
-        <li>Rewrite inefficient joins</li>
+        <li>Slow query log analysis</li>
+        <li>EXPLAIN optimization</li>
+        <li>Index tuning</li>
       </ul>
+      <div className="mt-6 bg-slate-900 p-6 rounded-xl">
+        <p><strong>Case:</strong> 6.2s → 180ms 🚀</p>
+      </div>
+      <div className="mt-8">
+        <LeadForm />
+      </div>
     </div>
   );
 }
@@ -52,9 +89,13 @@ function Replication() {
   return (
     <div className="pt-32 max-w-4xl mx-auto px-6">
       <h1 className="text-4xl font-bold mb-6">MySQL Replication Setup</h1>
-      <p className="text-gray-400">
-        Setup master-slave and group replication for high availability and failover.
-      </p>
+      <p className="text-gray-400">Build high availability systems with master-slave or group replication.</p>
+      <div className="mt-6 bg-slate-900 p-6 rounded-xl">
+        <p><strong>Case:</strong> 15s lag → &lt;1s 🚀</p>
+      </div>
+      <div className="mt-8">
+        <LeadForm />
+      </div>
     </div>
   );
 }
@@ -63,10 +104,25 @@ function Performance() {
   return (
     <div className="pt-32 max-w-4xl mx-auto px-6">
       <h1 className="text-4xl font-bold mb-6">MySQL Performance Tuning</h1>
-      <p className="text-gray-400">
-        Optimize CPU, memory, and disk usage for large-scale production systems.
-      </p>
+      <p className="text-gray-400">Optimize CPU, memory, and queries for production systems.</p>
+      <div className="mt-6 bg-slate-900 p-6 rounded-xl">
+        <p><strong>Case:</strong> CPU 95% → 40% 🚀</p>
+      </div>
+      <div className="mt-8">
+        <LeadForm />
+      </div>
     </div>
+  );
+}
+
+function WhatsAppButton() {
+  return (
+    <a
+      href="https://wa.me/923000000000"
+      className="fixed bottom-6 right-6 bg-green-500 px-5 py-3 rounded-full shadow-lg"
+    >
+      WhatsApp
+    </a>
   );
 }
 
@@ -81,6 +137,7 @@ export default function App() {
           <Route path="/mysql-replication-setup" element={<Replication />} />
           <Route path="/mysql-performance-tuning" element={<Performance />} />
         </Routes>
+        <WhatsAppButton />
       </div>
     </Router>
   );
