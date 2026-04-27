@@ -1,90 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asad Ali | MySQL Performance Expert</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-white">
+import React from "react";
+import { motion } from "framer-motion";
 
-<!-- NAVBAR -->
-<header class="fixed top-0 left-0 w-full bg-slate-900 shadow-lg z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <div class="text-xl font-bold">AsadDBA</div>
-    <nav class="space-x-6 hidden md:block">
-      <a href="#home" class="hover:text-cyan-400">Home</a>
-      <a href="#about" class="hover:text-cyan-400">About</a>
-      <a href="#services" class="hover:text-cyan-400">Services</a>
-      <a href="#case" class="hover:text-cyan-400">Case Studies</a>
-      <a href="#contact" class="hover:text-cyan-400">Contact</a>
-    </nav>
-  </div>
-</header>
+export default function Portfolio() {
+  return (
+    <div className="bg-slate-950 text-white font-sans">
+      {/* NAVBAR */}
+      <header className="fixed top-0 w-full bg-slate-900/80 backdrop-blur z-50">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          <div className="text-xl font-bold tracking-wide">AsadDBA</div>
+          <nav className="space-x-6 hidden md:block">
+            <a href="#home" className="hover:text-cyan-400">Home</a>
+            <a href="#about" className="hover:text-cyan-400">About</a>
+            <a href="#services" className="hover:text-cyan-400">Services</a>
+            <a href="#case" className="hover:text-cyan-400">Case Studies</a>
+            <a href="#contact" className="hover:text-cyan-400">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-<!-- HERO -->
-<section id="home" class="text-center py-32 px-6">
-  <h1 class="text-5xl font-bold mb-4">I Fix Slow MySQL Databases 🚀</h1>
-  <p class="text-xl text-gray-400 mb-6">MySQL DBA | Query Optimization | Replication | High Availability</p>
-  <p class="max-w-2xl mx-auto text-gray-400 mb-8">
-    I help businesses reduce query execution time, fix production issues, and scale databases for high traffic systems.
-  </p>
-  <a href="#contact" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Get Free Database Audit</a>
-</section>
+      {/* HERO */}
+      <section id="home" className="pt-40 pb-24 text-center px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-6xl font-bold mb-6"
+        >
+          I Fix Slow MySQL Databases 🚀
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-xl text-gray-400 mb-6"
+        >
+          Performance Tuning | Replication | High Availability
+        </motion.p>
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.05 }}
+          className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold shadow-lg"
+        >
+          Get Free Database Audit
+        </motion.a>
+      </section>
 
-<!-- ABOUT -->
-<section id="about" class="max-w-5xl mx-auto px-6 mb-20">
-  <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-  <p class="text-gray-400 text-center max-w-3xl mx-auto">
-    I am a MySQL Database Administrator with strong expertise in performance tuning, replication, and production troubleshooting. I specialize in solving real-world database bottlenecks and scaling systems for high performance.
-  </p>
-</section>
+      {/* ABOUT */}
+      <section id="about" className="max-w-5xl mx-auto px-6 py-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-3xl font-bold text-center mb-6"
+        >
+          About Me
+        </motion.h2>
+        <p className="text-gray-400 text-center max-w-3xl mx-auto">
+          I specialize in debugging production MySQL systems, optimizing queries, and scaling databases handling massive traffic.
+        </p>
+      </section>
 
-<!-- SERVICES -->
-<section id="services" class="max-w-5xl mx-auto px-6 mb-20">
-  <h2 class="text-3xl font-bold mb-8 text-center">Services</h2>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="bg-slate-900 p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2">🚀 Query Optimization</h3>
-      <p class="text-gray-400">Fix slow queries using indexing, execution plan analysis, and query rewriting.</p>
+      {/* SERVICES */}
+      <section id="services" className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12">Services</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            "Query Optimization",
+            "Replication Setup",
+            "Backup & Recovery",
+            "Monitoring Systems",
+          ].map((service, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              className="bg-slate-900 p-8 rounded-2xl shadow-lg"
+            >
+              <h3 className="text-xl font-semibold mb-2">{service}</h3>
+              <p className="text-gray-400">
+                Professional-grade implementation tailored for production systems.
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section id="case" className="max-w-5xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center mb-10">Case Study</h2>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="bg-slate-900 p-10 rounded-2xl shadow-xl"
+        >
+          <p><strong>Problem:</strong> Queries taking 5-8 seconds</p>
+          <p><strong>Solution:</strong> Index tuning + EXPLAIN analysis</p>
+          <p><strong>Result:</strong> Reduced to 200ms 🚀</p>
+        </motion.div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+        <p className="text-gray-400 mb-6">your-email@example.com</p>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          href="mailto:your-email@example.com"
+          className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold"
+        >
+          Hire Me
+        </motion.a>
+      </section>
+
+      <footer className="text-center py-6 text-gray-500">
+        © 2026 Asad Ali | MySQL DBA
+      </footer>
     </div>
-    <div class="bg-slate-900 p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2">🔁 Replication Setup</h3>
-      <p class="text-gray-400">Master-Slave & Group Replication for high availability systems.</p>
-    </div>
-    <div class="bg-slate-900 p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2">💾 Backup & Recovery</h3>
-      <p class="text-gray-400">Point-in-time recovery and automated backup strategies.</p>
-    </div>
-    <div class="bg-slate-900 p-6 rounded-2xl">
-      <h3 class="text-xl font-semibold mb-2">📊 Monitoring Setup</h3>
-      <p class="text-gray-400">PMM, Grafana dashboards, and alerting systems.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDIES -->
-<section id="case" class="max-w-5xl mx-auto px-6 mb-20">
-  <h2 class="text-3xl font-bold mb-8 text-center">Case Studies</h2>
-  <div class="bg-slate-900 p-8 rounded-2xl">
-    <p><strong>Problem:</strong> Slow queries (5-8 seconds)</p>
-    <p><strong>Solution:</strong> Index tuning + query rewrite</p>
-    <p><strong>Result:</strong> Reduced to 200ms 🚀</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="max-w-3xl mx-auto px-6 mb-20">
-  <div class="bg-slate-900 p-8 rounded-2xl text-center">
-    <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-    <p class="text-gray-400 mb-4">Email: your-email@example.com</p>
-    <a href="mailto:your-email@example.com" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold">Hire Me</a>
-  </div>
-</section>
-
-<footer class="text-center py-6 text-gray-500">
-  © 2026 Asad Ali | MySQL DBA
-</footer>
-
-</body>
-</html>
+  );
+}
